@@ -1,0 +1,6 @@
+FLASK_APP=src/app.py
+FLASK_DEBUG=False
+LIBANSWERS_API_BASE=https://umd.libanswers.com/1.0/search/
+IID=
+NO_RESULTS_URL=
+MODULE_URL=
