@@ -3,6 +3,7 @@ import logging
 import furl
 import os
 import requests
+import urllib.parse
 
 from flask import Flask, request
 from dotenv import load_dotenv
@@ -58,7 +59,9 @@ def search():
                 'msg': 'q parameter is required',
             },
         }, 400
-    query = args['q']
+
+    # Libanswers api only seems to work with spaces as +
+    query = args['q'].replace(" ", "+")
 
     limit = 3
     if 'per_page' in args and args['per_page'] != "":
@@ -76,13 +79,14 @@ def search():
     # Prepare OCLC API search
     params = {
         'iid': siteid,
-        'page': page,
         'limit': limit,
     }
 
     full_query_url = env['LIBANSWERS_API_BASE'] + query
 
     search_url = furl.furl(full_query_url)
+
+    logger.error(search_url.url)
 
     # Execute Libanswers API search
     try:
