@@ -127,9 +127,6 @@ def search():
         'module_link': module_link,
     }
 
-    if debug:
-        api_response['raw'] = json_content
-
     if total_records != 0:
         api_response['results'] = build_response(json_content)
     else:
