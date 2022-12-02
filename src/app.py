@@ -86,8 +86,6 @@ def search():
 
     search_url = furl.furl(full_query_url)
 
-    logger.error(search_url.url)
-
     # Execute Libanswers API search
     try:
         response = requests.get(search_url.url, params=params)
