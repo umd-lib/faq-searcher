@@ -1,6 +1,17 @@
+# Specifies the source code file Flask should run
 FLASK_APP=src/app.py
+
+# "True" if Flask debugging should be enabled, "False" otherwise
 FLASK_DEBUG=False
+
+# Base URL for the LibAnswers API
 LIBANSWERS_API_BASE=https://umd.libanswers.com/1.0/search/
+
+# LibAnswers ID
 IID=
-NO_RESULTS_URL=
-MODULE_URL=
+
+# URL to display when no results are returned
+NO_RESULTS_URL=http://umd.libanswers.com/search
+
+# Base URL for seeing all results
+MODULE_URL=http://umd.libanswers.com/search?q=

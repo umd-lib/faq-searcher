@@ -3,7 +3,6 @@ import logging
 import furl
 import os
 import requests
-import urllib.parse
 
 from flask import Flask, request
 from dotenv import load_dotenv
