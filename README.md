@@ -10,6 +10,18 @@ Python 3 Flask application to search the libanswers FAQ searcher.
 
 See [docs/DevelopmentSetup.md](docs/DevelopmentSetup.md).
 
+## Environment Configuration
+
+The application requires a ".env" file in the root directory to provide
+server-specific information (i.e., those parts of the configuration that
+may vary based on whether the server is a test/qa/production server).
+
+A sample "env_example" file has been provided to assist with this process.
+Simply copy the "env_example" file to ".env" and fill out the parameters as
+appropriate.
+
+The configured .env file should not be checked into the Git repository.
+
 ### Running in Docker
 
 ```bash
