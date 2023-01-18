@@ -94,6 +94,7 @@ def search():
 
         return {
             'endpoint': 'faq',
+            'results': [],
             'error': {
                 'msg': f'Search error',
             },
@@ -104,6 +105,7 @@ def search():
 
         return {
             'endpoint': 'faq',
+            'results': [],
             'error': {
                 'msg': f'Received {response.status_code} for q={query}',
             },
@@ -130,6 +132,7 @@ def search():
         api_response['results'] = build_response(json_content)
     else:
         api_response['error'] = build_no_results()
+        api_response['results'] = []
 
     return api_response
 
